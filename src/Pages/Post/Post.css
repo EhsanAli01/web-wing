@@ -1,0 +1,77 @@
+:root {
+    --main-wid: 450px;
+}
+
+
+#post-section {
+    /* border: 2px solid black; */
+    width: 70%;
+    height: 100%;
+    overflow: auto;
+}
+
+#post-section > div {
+    border: 1px solid gray;
+    background-color: aliceblue;
+    border-radius: 8px;
+    padding: 50px;
+    gap: 20px;
+    min-height: 600px;
+    width: 600px;
+}
+
+#post-section > div > h1 {
+    width: var(--main-wid);
+    line-height: 35px;
+}
+
+#post-section > div > h1 > a {
+    text-decoration: none;
+    color: black;
+    transition: all 0.2s;
+}
+
+#post-section > div > h1 > a:hover {
+    color: gray;
+    text-decoration: underline;
+}
+
+#post-image {
+    background-color: white;
+}
+
+#post-image > div {
+    border: 1px solid gray;
+    border-radius: 8px;
+    width: var(--main-wid);
+    height: 200px;
+    font-size: 1.5rem;
+    gap: 15px;
+    color: gray;
+}
+
+#post-section > div > input {
+    /* border: 2px solid black; */
+    height: 50px;
+    width: var(--main-wid);
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+#post-section > div > textarea {
+    height: 150px;
+    width: var(--main-wid);
+    font-size: 1.1rem;
+    padding: 10px;
+    resize: none;
+}
+
+#post-section > div > button {
+    width: var(--main-wid);
+}
+
+#post-img > img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}

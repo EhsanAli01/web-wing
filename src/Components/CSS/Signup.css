@@ -1,0 +1,100 @@
+#header {
+    border-bottom: 1px solid gray;
+    height: 100px;
+    font-size: 2.8rem;
+    letter-spacing: 8px;
+    font-weight: 1000;
+    background-color: rgb(241, 241, 251);
+}
+
+#signup::before {
+    content: "";
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -20;
+    background: url('../../assets/login-bg.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0.2;
+}
+
+#signup {
+    /* border: 2px solid black; */
+    gap: 20px;
+    padding: 50px;
+    height: calc(100vh - 100px);
+    overflow: auto;
+    background-color: #c8e3f45b;
+}
+
+#dpimage {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+}
+
+#dp-uploader {
+    border: 2px solid black;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#dp-uploader>img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+#userdp {
+    display: none;
+}
+
+#dpimage>label {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    border: 1px solid gray;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: var(--offbody-color);
+}
+
+#dpimage>label>i {
+    font-size: 1.5rem;
+}
+
+#signup>input,
+#signup>button,
+#signup>textarea {
+    width: 25%;
+    outline: none;
+}
+
+#signup>textarea {
+    resize: none;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+}
+
+#signup>input {
+    height: 35px;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+}
+
+#signup>p>a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#signup>p>a:hover {
+    text-decoration: underline;
+}

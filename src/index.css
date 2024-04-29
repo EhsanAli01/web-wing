@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* background-color: #f4eaf4; */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  --body-color: #212025;
+  --offbody-color: #c8e3f4;
+  --txt-color: white;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -20;
+  background: url('./assets/body-bg.jpg') no-repeat center/cover;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #8e9192;
+  margin: 50px;
+  border-radius: 50px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #85c7f1;
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #44b3d8;
+}
+
+/* Utility */
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.j-spc-between {
+  justify-content: space-between;
+}
+
+.f-col {
+  flex-direction: column;
+}
+
+.font-xl {
+  font-size: 1.2rem;
+}
+
+.font-xxl {
+  font-size: 1.5rem;
+}
+
+.font-h {
+  font-size: 2.5rem;
+}
+
+.brdr-blk {
+  border: 1px solid black;
+}
+
+.btn {
+  background: none;
+  padding: 7px 15px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  margin: 0 4px;
+  transition: all 0.2s ease;
+  outline: none;
+  border: none;
+}
+
+.btn-brdr {
+  border: 2px solid royalblue;
+  color: royalblue;
+}
+
+.btn-bg {
+  border: 2px solid royalblue;
+  background-color: royalblue;
+  color: white;
+}
+
+.btn-bg-success {
+  border: 2px solid rgb(3, 169, 3);
+  background-color: rgb(3, 169, 3);
+  color: white;
+}
+
+.btn:hover {
+  opacity: .8;
+  color: white;
+}
+
+.btn-brdr:hover {
+  border: 2px solid royalblue;
+  background-color: royalblue;
+  color: white;
+}
+
+.divider {
+  border: 1px solid gray;
+  width: 70%;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.gap-x {
+  gap: 10px;
+}
+
+.reset-a {
+  text-decoration: none;
+  color: #434345;
+}
+
+
+.owner {
+  height: 20px;
+  width: 20px;
+  filter: hue-rotate(60deg);
+}
+
+.menu {
+  width: 60px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  position: absolute;
+  top: -34px;
+  left: 34px;
+}
+
+/* Reset Images */
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+}

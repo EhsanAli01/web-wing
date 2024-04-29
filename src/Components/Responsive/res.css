@@ -1,0 +1,12 @@
+@media screen and (max-width: 1508px) {
+    .link-text {
+        display: none;
+    }
+    
+    #sidenav > ul > li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 1s ease;
+    }
+}
