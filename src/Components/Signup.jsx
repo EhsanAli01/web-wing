@@ -49,7 +49,7 @@ const Signup = () => {
       data.append('userPassword', userPassword);
       data.append('userDescription', userDescription);
 
-      axios.post('http://www.localhost:80/user/signup', data) 
+      axios.post('https://backend-phi-red.vercel.app/user/signup', data) 
         .then(result => {
           changeError('')
           setloading(false)

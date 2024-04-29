@@ -26,7 +26,7 @@ const Post = () => {
     form.append('imageTile' , imageTitle);
     form.append('imageDescription' , imageDescription);
 
-    axios.post('http://www.localhost:80/posts/createNewPost/' + localStorage.getItem('userId') , form)
+    axios.post('https://backend-phi-red.vercel.app/posts/createNewPost/' + localStorage.getItem('userId') , form)
     .then(result => {
       console.log(result);
       setloading(false);

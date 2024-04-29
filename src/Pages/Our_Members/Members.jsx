@@ -5,7 +5,7 @@ const Members = () => {
   const [partnerData, changeData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://www.localhost:80/user/partners')
+    axios.get('https://backend-phi-red.vercel.app/user/partners')
       .then(result => {
         console.log(result.data.message);
         changeData(result.data.message);

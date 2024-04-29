@@ -31,7 +31,7 @@ const Login = () => {
     data.append('userEmail', userEmail);
     data.append('userPassword', userPassword);
 
-    axios.post('http://www.localhost:80/user/login', data)
+    axios.post('https://backend-phi-red.vercel.app/user/login', data)
       .then(result => {
         setloading(false)
         console.log(result);

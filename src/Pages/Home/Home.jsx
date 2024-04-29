@@ -12,7 +12,7 @@ const Home = () => {
     if (userType == 'owner' || userType == 'partner') setPermit(true);
     else setPermit(false);
 
-    axios.get("http://localhost:80/posts")
+    axios.get("https://backend-phi-red.vercel.app/posts")
       .then(result => {
         console.log(result.data.message);
         changePosts(result.data.message);
@@ -51,7 +51,7 @@ const Post = (props) => {
   const [userData, changeData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://www.localhost:80/user/' + props.detail.userID)
+    axios.get('https://backend-phi-red.vercel.app/user/' + props.detail.userID)
       .then(result => {
         console.log(result.data.message);
         changeData(result.data.message[0]);

@@ -9,7 +9,7 @@ const Profile = () => {
 
 
     useEffect(() => {
-        axios.get('http://www.localhost:80/posts/' + localStorage.getItem('userId'))
+        axios.get('https://backend-phi-red.vercel.app/posts/' + localStorage.getItem('userId'))
             .then(result => {
                 console.log(result.data.message);
                 changePosts(result.data.message);
@@ -55,7 +55,7 @@ const Post = (props) => {
     const [userData, changeData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://www.localhost:80/user/' + props.detail.userID)
+        axios.get('https://backend-phi-red.vercel.app/user/' + props.detail.userID)
             .then(result => {
                 console.log(result.data.message);
                 changeData(result.data.message[0]);
@@ -75,7 +75,7 @@ const Post = (props) => {
             let imageNameWithType = aftersplit[aftersplit.length - 1];
             let imageName = imageNameWithType.split('.')[0];
 
-            axios.delete('http://www.localhost:80/posts/delete/?' + 'imageId=' + props.detail._id + '&imageName=' + imageName)
+            axios.delete('https://backend-phi-red.vercel.app/posts/delete/?' + 'imageId=' + props.detail._id + '&imageName=' + imageName)
                 .then(result => {
                     window.location.reload();
                 })
