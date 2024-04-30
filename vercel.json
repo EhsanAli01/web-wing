@@ -1,10 +1,20 @@
 {
-    "version": 2,
-    "name": "web-wing",
-    "builds": [
-       { "src": "app.jsx", "use": "@vercel/node" }
-    ],
     "routes": [
-       { "src": "/(.*)", "dest": "/app.jsx" }
+       {
+        "src": "/",
+        "dest": "/"
+       },
+       {
+        "src": "/login",
+        "dest": "/"
+       },
+       {
+        "src": "/signup",
+        "dest": "/"
+       },
+       {
+        "src": "/main",
+        "dest": "/"
+       }
     ]
  }
