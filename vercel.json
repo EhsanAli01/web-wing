@@ -15,6 +15,30 @@
        {
         "src": "/main",
         "dest": "/"
-       }
+       },
+        {
+        "src": "/main/home",
+        "dest": "/"
+        },
+        {
+        "src": "/main/about",
+        "dest": "/"
+        },
+        {
+        "src": "/main/members",
+        "dest": "/"
+        },
+        {
+        "src": "/main/contact",
+        "dest": "/"
+        },
+        {
+        "src": "/main/profile",
+        "dest": "/"
+        },
+        {
+        "src": "/main/post",
+        "dest": "/"
+        }
     ]
  }
