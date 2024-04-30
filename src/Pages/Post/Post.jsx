@@ -8,9 +8,10 @@ const Post = () => {
   const [isloading, setloading] = useState(false);
   const [postImage, changeImage] = useState(null);
   const [postImageUrl, changeImageUrl] = useState('');
-  const [imageTitle , changeTitle] = useState('');
-  const [imageDescription , changeDescription] = useState('');
+  const [imageTitle, changeTitle] = useState('');
+  const [imageDescription, changeDescription] = useState('');
   const navigate = useNavigate();
+  const [errHandler, changeError] = useState('');
 
 
   const imageHandler = (e) => {
@@ -22,20 +23,21 @@ const Post = () => {
     setloading(true);
     e.preventDefault();
     const form = new FormData();
-    form.append('postPic' , postImage);
-    form.append('imageTile' , imageTitle);
-    form.append('imageDescription' , imageDescription);
+    form.append('postPic', postImage);
+    form.append('imageTile', imageTitle);
+    form.append('imageDescription', imageDescription);
 
-    axios.post('https://backend-phi-red.vercel.app/posts/createNewPost/' + localStorage.getItem('userId') , form)
-    .then(result => {
-      console.log(result);
-      setloading(false);
-      navigate('/main');
-    })
-    .catch(err => {
-      console.log(err);
-      setloading(false);
-    })
+    axios.post('https://backend-phi-red.vercel.app/posts/createNewPost/' + localStorage.getItem('userId'), form)
+      .then(result => {
+        console.log(result);
+        setloading(false);
+        navigate('/main');
+      })
+      .catch(err => {
+        console.log(err);
+        setloading(false);
+        changeError(err.response.data.error.message);
+      })
   }
 
   return (
@@ -47,7 +49,7 @@ const Post = () => {
           {
             postImageUrl != '' ?
               <div id='post-img'>
-                <img src={postImageUrl} alt="image"/>
+                <img src={postImageUrl} alt="image" />
               </div>
               :
               <div className='flex justify-center align-center'>
@@ -56,9 +58,10 @@ const Post = () => {
               </div>
           }
         </label>
-        <input type="text" placeholder='Post title' required onChange={(e) => {changeTitle(e.target.value)}} />
-        <textarea cols="30" rows="10" placeholder='Post Description' required onChange={(e) => {changeDescription(e.target.value)}}></textarea>
+        <input type="text" placeholder='Post title' required onChange={(e) => { changeTitle(e.target.value) }} />
+        <textarea cols="30" rows="10" placeholder='Post Description' required onChange={(e) => { changeDescription(e.target.value) }}></textarea>
         <button type='submit' className='btn btn-bg-success'>{isloading ? <img src={loader} width={"19px"} alt=''></img> : <>Post</>}</button>
+        <span style={{ color: 'red' }}>{errHandler}</span>
       </div>
     </form>
   )

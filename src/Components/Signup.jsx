@@ -59,7 +59,7 @@ const Signup = () => {
         .catch(err => {
           setloading(false)
           console.log(err);
-          changeError(err.response.data.message);
+          changeError(err.response.data.error.message);
         })
     }
   }

@@ -1,20 +1,44 @@
 {
-    "routes": [
+   "routes": [
+      {
+       "src": "/",
+       "dest": "/"
+      },
+      {
+       "src": "/login",
+       "dest": "/"
+      },
+      {
+       "src": "/signup",
+       "dest": "/"
+      },
+      {
+       "src": "/main",
+       "dest": "/"
+      },
        {
-        "src": "/",
-        "dest": "/"
+       "src": "/main/home",
+       "dest": "/"
        },
        {
-        "src": "/login",
-        "dest": "/"
+       "src": "/main/about",
+       "dest": "/"
        },
        {
-        "src": "/signup",
-        "dest": "/"
+       "src": "/main/members",
+       "dest": "/"
        },
        {
-        "src": "/main",
-        "dest": "/"
+       "src": "/main/contact",
+       "dest": "/"
+       },
+       {
+       "src": "/main/profile",
+       "dest": "/"
+       },
+       {
+       "src": "/main/post",
+       "dest": "/"
        }
-    ]
- }
+   ]
+}
