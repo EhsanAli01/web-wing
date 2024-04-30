@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import loader from '../../assets/loader.gif'
 
-const Home = () => {  
+const Home = () => {
   const [isPermited, setPermit] = useState(false);
   const [posts, changePosts] = useState([]);
+  const [isloading, setloading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -16,9 +18,11 @@ const Home = () => {
       .then(result => {
         console.log(result.data.message);
         changePosts(result.data.message);
+        setloading(false);
       })
       .catch(err => {
         console.log(err);
+        setloading(false);
       })
   }, [])
 
@@ -40,7 +44,12 @@ const Home = () => {
             <button className='btn btn-bg-success' onClick={() => { navigate('/main/post') }}>Post now</button>
           </div>
         }
-        {posts?.map(data => <Post key={data._id} detail={data} />)}
+        {isloading ?
+          <img className='loader' src={loader} alt="" />
+          : <>
+            {posts?.map(data => <Post key={data._id} detail={data} />)}
+          </>
+        }
       </section>
     </>
   )

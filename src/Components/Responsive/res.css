@@ -1,12 +1,32 @@
-@media screen and (max-width: 1508px) {
-    .link-text {
+@media screen and (max-width: 1662px) {
+    #login::before {
         display: none;
     }
-    
-    #sidenav > ul > li {
+
+    #login {
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: all 1s ease;
+    }
+
+    #login-form {
+        border: 2px solid gray;
+        border-radius: 8px;
+        height: 600px !important;
+    }
+
+
+    @media screen and (max-width: 1508px) {
+        .link-text {
+            display: none;
+        }
+
+        #sidenav>ul>li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 1s ease;
+        }
+
     }
 }

@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import './Profile.css'
 import badge from '../../assets/badge.png'
 import axios from 'axios'
+import loader from '../../assets/loader.gif'
 
 const Profile = () => {
     const [posts, changePosts] = useState([]);
+    const [isloading, setloading] = useState(true);
     const [conp, chp] = useState(false);
 
 
@@ -13,9 +15,11 @@ const Profile = () => {
             .then(result => {
                 console.log(result.data.message);
                 changePosts(result.data.message);
+                setloading(false);
             })
             .catch(err => {
                 console.log(err);
+                setloading(false);
             })
         if (localStorage.getItem('userType') == 'user') chp(true)
     }, [])
@@ -39,11 +43,20 @@ const Profile = () => {
             </main>
             <section id='my-posts'>
                 {conp ?
-                    <h1 className='flex justify-center align-center font-xxl' style={{color: 'gray'}}>There are no posts.</h1>
+                    <h1 className='flex justify-center align-center font-xxl' style={{ color: 'gray' }}>There are no posts.</h1>
                     :
                     <>
-                        {posts?.map(data => <Post key={data._id} detail={data} />)}
+                        {
+                            isloading ?
+                                <img className='loader' src={loader} alt="" />
+                                :
+                                <>
+                                    {posts?.map(data => <Post key={data._id} detail={data} />)}
+                                </>
+                        }
                     </>
+
+
                 }
             </section>
         </section>
